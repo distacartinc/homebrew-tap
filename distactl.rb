@@ -5,49 +5,81 @@
 class Distactl < Formula
   desc "A CLI tool for Dista platform"
   homepage "https://github.com/distacartinc/distactl"
-  version "0.5.1"
+  version "0.5.2"
   license "MIT"
 
   depends_on "ghostscript"
   depends_on "poppler"
 
   on_macos do
-    url "https://github.com/distacartinc/distactl-public/releases/download/v0.5.1/distactl-Darwin-all.tar.gz"
-    sha256 "3b31b84382b60500d919735feabd63ebe1cece1755dc12aa82e5a68bb94aa62f"
+    url "https://github.com/distacartinc/distactl-public/releases/download/v0.5.2/distactl-Darwin-all.tar.gz"
+    sha256 "0ae552a4b934374741b146de29a59a3b8e4ee61b9cdea7412e365b86a9b69743"
 
     def install
       bin.install "distactl"
+      # Install bash completions
+      bash_completion.install "assets/completions/distactl.bash" if File.exist?("assets/completions/distactl.bash")
+      # Install zsh completions
+      zsh_completion.install "assets/completions/_distactl" if File.exist?("assets/completions/_distactl")
+      # Install fish completions
+      fish_completion.install "assets/completions/distactl.fish" if File.exist?("assets/completions/distactl.fish")
+      # Install man pages
+      man1.install Dir["assets/manpages/*.1"] if Dir.exist?("assets/manpages")
     end
   end
 
   on_linux do
     on_intel do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/distacartinc/distactl-public/releases/download/v0.5.1/distactl-Linux-x86_64.tar.gz"
-        sha256 "1d03aad2d40f029a87f96f1968ffad28e4109b29a3a7890847cc95cdf1c3276e"
+        url "https://github.com/distacartinc/distactl-public/releases/download/v0.5.2/distactl-Linux-x86_64.tar.gz"
+        sha256 "a2620dc59954eb39ec2dc3800a3ad88fc7f9e4eaefa2892d883a24d07a515b5c"
 
         def install
           bin.install "distactl"
+          # Install bash completions
+          bash_completion.install "assets/completions/distactl.bash" if File.exist?("assets/completions/distactl.bash")
+          # Install zsh completions
+          zsh_completion.install "assets/completions/_distactl" if File.exist?("assets/completions/_distactl")
+          # Install fish completions
+          fish_completion.install "assets/completions/distactl.fish" if File.exist?("assets/completions/distactl.fish")
+          # Install man pages
+          man1.install Dir["assets/manpages/*.1"] if Dir.exist?("assets/manpages")
         end
       end
     end
     on_arm do
       if !Hardware::CPU.is_64_bit?
-        url "https://github.com/distacartinc/distactl-public/releases/download/v0.5.1/distactl-Linux-armv6.tar.gz"
-        sha256 "74d179208edbcb9f6d722acc8bb1dd4e9500597893870c06b5055bc73bec2180"
+        url "https://github.com/distacartinc/distactl-public/releases/download/v0.5.2/distactl-Linux-armv6.tar.gz"
+        sha256 "26b2065cc988dc686eda32b2a4076993b504b6eceb9f88f4e501fbd8cdcc06df"
 
         def install
           bin.install "distactl"
+          # Install bash completions
+          bash_completion.install "assets/completions/distactl.bash" if File.exist?("assets/completions/distactl.bash")
+          # Install zsh completions
+          zsh_completion.install "assets/completions/_distactl" if File.exist?("assets/completions/_distactl")
+          # Install fish completions
+          fish_completion.install "assets/completions/distactl.fish" if File.exist?("assets/completions/distactl.fish")
+          # Install man pages
+          man1.install Dir["assets/manpages/*.1"] if Dir.exist?("assets/manpages")
         end
       end
     end
     on_arm do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/distacartinc/distactl-public/releases/download/v0.5.1/distactl-Linux-arm64.tar.gz"
-        sha256 "78f021ef16d5d64b7a36c6818f4673fdb327a342b1dd1b04321e91e667aebede"
+        url "https://github.com/distacartinc/distactl-public/releases/download/v0.5.2/distactl-Linux-arm64.tar.gz"
+        sha256 "bbb832820aca022f8fff374b872080d5b86e8b02d6f28c9cbcaed934bd684e39"
 
         def install
           bin.install "distactl"
+          # Install bash completions
+          bash_completion.install "assets/completions/distactl.bash" if File.exist?("assets/completions/distactl.bash")
+          # Install zsh completions
+          zsh_completion.install "assets/completions/_distactl" if File.exist?("assets/completions/_distactl")
+          # Install fish completions
+          fish_completion.install "assets/completions/distactl.fish" if File.exist?("assets/completions/distactl.fish")
+          # Install man pages
+          man1.install Dir["assets/manpages/*.1"] if Dir.exist?("assets/manpages")
         end
       end
     end
