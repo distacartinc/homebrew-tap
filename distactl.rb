@@ -5,15 +5,15 @@
 class Distactl < Formula
   desc "A CLI tool for Dista platform"
   homepage "https://github.com/distacartinc/distactl"
-  version "0.5.8"
+  version "0.5.9"
   license "MIT"
 
   depends_on "ghostscript"
   depends_on "poppler"
 
   on_macos do
-    url "https://github.com/distacartinc/distactl-public/releases/download/v0.5.8/distactl-Darwin-all.tar.gz"
-    sha256 "715efb3a8ed2a3b579d9fc99bd10684e68a5c3083154cc503478de78da79f8a3"
+    url "https://github.com/distacartinc/distactl-public/releases/download/v0.5.9/distactl-Darwin-all.tar.gz"
+    sha256 "c2396008d07bfb7bee0e3f5e608e67009136f52e66aa08afd3cf4c9532e8a6cb"
 
     def install
       bin.install "distactl"
@@ -31,8 +31,8 @@ class Distactl < Formula
   on_linux do
     on_intel do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/distacartinc/distactl-public/releases/download/v0.5.8/distactl-Linux-x86_64.tar.gz"
-        sha256 "e8558030a790b274fafcd3fed382cde97c7c2f23b4ecbdd15b39364ed9329bf6"
+        url "https://github.com/distacartinc/distactl-public/releases/download/v0.5.9/distactl-Linux-x86_64.tar.gz"
+        sha256 "d9a3b8b6260857f576509d7d718d45141127afe93839bb8f2382a02fcd655df7"
 
         def install
           bin.install "distactl"
@@ -49,8 +49,8 @@ class Distactl < Formula
     end
     on_arm do
       if !Hardware::CPU.is_64_bit?
-        url "https://github.com/distacartinc/distactl-public/releases/download/v0.5.8/distactl-Linux-armv6.tar.gz"
-        sha256 "6a10b67d94113fd0de761145366068edcea903d25e10d3d97a16eb567d0a0161"
+        url "https://github.com/distacartinc/distactl-public/releases/download/v0.5.9/distactl-Linux-armv6.tar.gz"
+        sha256 "994c44c7163a90d94901d2b654aa946a54eeb9c06db76a5f7fa35cad08f0d2bc"
 
         def install
           bin.install "distactl"
@@ -67,8 +67,8 @@ class Distactl < Formula
     end
     on_arm do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/distacartinc/distactl-public/releases/download/v0.5.8/distactl-Linux-arm64.tar.gz"
-        sha256 "69bc7a96c6f844a125a29c23edae3e5c9297e1a2ea667ef9fa4555c5bcb855af"
+        url "https://github.com/distacartinc/distactl-public/releases/download/v0.5.9/distactl-Linux-arm64.tar.gz"
+        sha256 "7fef3e7aee27bbe26ef5ff3845d1b20a84a3ebccf5e8e5ecd01502c154e10da0"
 
         def install
           bin.install "distactl"
